@@ -1,0 +1,74 @@
+[[redirects]]
+from = "/start"
+to = "/start.html"
+status = 200
+
+[[redirects]]
+from = "/sourcing"
+to = "/sourcing.html"
+status = 200
+
+[[redirects]]
+from = "/btl"
+to = "/btl.html"
+status = 200
+
+[[redirects]]
+from = "/hmo"
+to = "/hmo.html"
+status = 200
+
+[[redirects]]
+from = "/ha"
+to = "/ha.html"
+status = 200
+
+[[redirects]]
+from = "/quiz"
+to = "https://propertykickstart-quiz.netlify.app/"
+status = 302
+
+[[redirects]]
+from = "/call"
+to = "https://tidycal.com/propertykickstartuk/property-investment-strategy-call"
+status = 302
+
+[[redirects]]
+from = "/checklist"
+to = "https://drive.google.com/file/d/1uCAhguCnJ3uDqEpUN5M7xM9IGG9HGPyc/view?usp=sharing"
+status = 302
+
+[[redirects]]
+from = "/register"
+to = "https://propertykickstart.co.uk/register"
+status = 302
+
+[[redirects]]
+from = "/listings"
+to = "https://propertykickstart.co.uk"
+status = 302
+
+[[redirects]]
+from = "/access"
+to = "https://propertykickstart.co.uk"
+status = 302
+
+[[redirects]]
+from = "/ready"
+to = "/start"
+status = 302
+
+[[redirects]]
+from = "/strategy"
+to = "/start"
+status = 302
+
+[[redirects]]
+from = "/funding"
+to = "/start"
+status = 302
+
+[[redirects]]
+from = "/investor"
+to = "/start"
+status = 302
