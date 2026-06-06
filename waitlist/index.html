@@ -34,7 +34,7 @@
       justify-content: space-between;
     }
 
-    .logo img { height: 36px; display: block; }
+    .logo img { height: 44px; display: block; filter: brightness(0) invert(1); }
 
     .logo-svg text { font-family: 'Arial', sans-serif; }
 
@@ -632,7 +632,8 @@ Wait, there was an issue with this. Let me look at the issue - the base64 output
         <h3>Secure Your Spot</h3>
         <p>Takes 60 seconds. No obligation.</p>
 
-        <form id="waitlistForm" onsubmit="handleSubmit(event)">
+        <form id="waitlistForm" name="investor-waitlist" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="investor-waitlist" />
           <div class="form-group">
             <label>Full Name *</label>
             <input type="text" name="name" required placeholder="e.g. James Robertson" />
@@ -769,12 +770,24 @@ Wait, there was an issue with this. Let me look at the issue - the base64 output
       e.preventDefault();
       const form = document.getElementById('waitlistForm');
       const success = document.getElementById('successMsg');
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Submitting…';
+      btn.disabled = true;
 
-      // In production, replace this with your Brevo form endpoint or Pipedream webhook
-      // Example: fetch('YOUR_WEBHOOK_URL', { method: 'POST', body: new FormData(form) })
-
-      form.style.display = 'none';
-      success.style.display = 'block';
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      })
+      .catch(() => {
+        btn.textContent = 'JOIN THE WAITLIST →';
+        btn.disabled = false;
+        alert('Something went wrong — please try again or email us directly.');
+      });
     }
   </script>
 
