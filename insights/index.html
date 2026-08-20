@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Investor Insights from Property Kickstart — clear, practical analysis of UK residential property strategies for serious investors.">
+  <meta name="description" content="Investor Insights from Property Kickstart: clear, practical analysis of UK residential property strategies for serious investors.">
   <meta property="og:title" content="Investor Insights | Property Kickstart Hub">
   <meta property="og:description" content="Clear, practical analysis of UK residential property strategies for serious investors.">
   <meta property="og:type" content="website">
@@ -13,240 +13,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --pk-orange:    #c2604a;
-      --pk-green:     #0b5028;
-      --pk-dark:      #333333;
-      --pk-off-white: #f7f5f2;
-      --pk-text:      #4a4a4a;
-      --pk-white:     #ffffff;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', 'DM Sans', sans-serif; font-size: 17px; line-height: 1.75; color: var(--pk-text); background: var(--pk-white); }
-
-    /* Nav */
-    .site-nav { background: var(--pk-white); border-bottom: 1px solid #e8e4e0; padding: 0 1.5rem; position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { text-decoration: none; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--pk-dark); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--pk-orange); }
-    .nav-links a.active { color: var(--pk-orange); }
-    .nav-cta { background: var(--pk-orange); color: var(--pk-white) !important; padding: 0.45rem 1.1rem; border-radius: 4px; font-size: 0.85rem !important; }
-    .nav-cta:hover { background: #a84f3a !important; color: var(--pk-white) !important; }
-
-    /* Page header */
-    .page-header { background: var(--pk-off-white); padding: 4rem 1.5rem 3rem; border-bottom: 3px solid var(--pk-orange); }
-    .page-header-inner { max-width: 800px; margin: 0 auto; }
-    .page-header .section-label { display: inline-block; background: var(--pk-green); color: var(--pk-white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 3px; margin-bottom: 1.25rem; }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; color: var(--pk-dark); margin-bottom: 1rem; }
-    .page-header p { font-size: 1.1rem; color: #6a635c; max-width: 600px; line-height: 1.7; }
-
-    /* Grid */
-    .insights-section { max-width: 1100px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
-    .insights-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-
-    /* Card */
-    .insight-card { background: var(--pk-white); border: 1px solid #e8e4e0; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
-    .insight-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
-    .insight-card a.card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
-    .card-image { width: 100%; aspect-ratio: 1200/630; overflow: hidden; background: var(--pk-off-white); }
-    .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .card-body { padding: 1.5rem 1.5rem 1.75rem; display: flex; flex-direction: column; flex: 1; }
-    .card-tag { display: inline-block; background: var(--pk-green); color: var(--pk-white); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 3px; margin-bottom: 0.85rem; align-self: flex-start; }
-    .card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--pk-dark); line-height: 1.35; margin-bottom: 0.75rem; }
-    .card-desc { font-size: 0.9rem; color: #6a635c; line-height: 1.65; margin-bottom: 1.25rem; flex: 1; }
-    .card-meta { font-size: 0.8rem; color: #9a918a; display: flex; gap: 0.5rem; align-items: center; }
-    .card-meta .dot { color: #ccc; }
-    .card-read-more { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--pk-orange); font-size: 0.875rem; font-weight: 600; margin-top: 1rem; }
-    .card-read-more svg { width: 14px; height: 14px; }
-
-    /* CTA strip */
-    .quiz-strip { background: var(--pk-dark); padding: 3rem 1.5rem; text-align: center; }
-    .quiz-strip-inner { max-width: 600px; margin: 0 auto; }
-    .quiz-strip h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--pk-white); margin-bottom: 0.75rem; }
-    .quiz-strip p { font-size: 1rem; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
-    .quiz-strip a.cta-btn { display: inline-block; background: var(--pk-orange); color: var(--pk-white); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.9rem 2.25rem; border-radius: 5px; transition: background 0.2s; }
-    .quiz-strip a.cta-btn:hover { background: #a84f3a; }
-
-    /* Footer */
-    .site-footer { background: var(--pk-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 2.5rem 1.5rem; font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.08); }
-    .site-footer a { color: rgba(255,255,255,0.75); text-decoration: underline; }
-    .site-footer .footer-links { margin-bottom: 0.75rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .page-header { padding: 2.5rem 1rem 2rem; }
-      .insights-section { padding: 2rem 1rem 3rem; }
-      .insights-grid { grid-template-columns: 1fr; }
-    }
+    :root {--pk-orange:#c2604a;--pk-green:#0b5028;--pk-dark:#333333;--pk-off-white:#f7f5f2;--pk-text:#4a4a4a;--pk-white:#ffffff;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0} body{font-family:'Inter','DM Sans',sans-serif;font-size:17px;line-height:1.75;color:var(--pk-text);background:var(--pk-white)}
+    .site-nav{background:var(--pk-white);border-bottom:1px solid #e8e4e0;padding:0 1.5rem;position:sticky;top:0;z-index:100}.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}.nav-logo{text-decoration:none}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{text-decoration:none;color:var(--pk-dark);font-size:.9rem;font-weight:500;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--pk-orange)}.nav-cta{background:var(--pk-orange);color:var(--pk-white)!important;padding:.45rem 1.1rem;border-radius:4px;font-size:.85rem!important}.nav-cta:hover{background:#a84f3a!important;color:var(--pk-white)!important}
+    .page-header{background:var(--pk-off-white);padding:4rem 1.5rem 3rem;border-bottom:3px solid var(--pk-orange)}.page-header-inner{max-width:800px;margin:0 auto}.page-header .section-label{display:inline-block;background:var(--pk-green);color:var(--pk-white);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .75rem;border-radius:3px;margin-bottom:1.25rem}.page-header h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.2;color:var(--pk-dark);margin-bottom:1rem}.page-header p{font-size:1.1rem;color:#6a635c;max-width:600px;line-height:1.7}
+    .insights-section{max-width:1100px;margin:0 auto;padding:3.5rem 1.5rem 5rem}.insights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}.insight-card{background:var(--pk-white);border:1px solid #e8e4e0;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}.insight-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.1);transform:translateY(-2px)}.insight-card a.card-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%}.card-image{width:100%;aspect-ratio:1200/630;overflow:hidden;background:var(--pk-off-white)}.card-image img{width:100%;height:100%;object-fit:cover;display:block}.card-body{padding:1.5rem 1.5rem 1.75rem;display:flex;flex-direction:column;flex:1}.card-tag{display:inline-block;background:var(--pk-green);color:var(--pk-white);font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;margin-bottom:.85rem;align-self:flex-start}.card-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--pk-dark);line-height:1.35;margin-bottom:.75rem}.card-desc{font-size:.9rem;color:#6a635c;line-height:1.65;margin-bottom:1.25rem;flex:1}.card-meta{font-size:.8rem;color:#9a918a;display:flex;gap:.5rem;align-items:center}.card-meta .dot{color:#ccc}.card-read-more{display:inline-flex;align-items:center;gap:.35rem;color:var(--pk-orange);font-size:.875rem;font-weight:600;margin-top:1rem}.card-read-more svg{width:14px;height:14px}
+    .quiz-strip{background:var(--pk-dark);padding:3rem 1.5rem;text-align:center}.quiz-strip-inner{max-width:600px;margin:0 auto}.quiz-strip h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--pk-white);margin-bottom:.75rem}.quiz-strip p{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:1.5rem}.quiz-strip a.cta-btn{display:inline-block;background:var(--pk-orange);color:var(--pk-white);text-decoration:none;font-weight:600;font-size:.95rem;padding:.9rem 2.25rem;border-radius:5px;transition:background .2s}.quiz-strip a.cta-btn:hover{background:#a84f3a}.site-footer{background:var(--pk-dark);color:rgba(255,255,255,.6);text-align:center;padding:2.5rem 1.5rem;font-size:.82rem;border-top:1px solid rgba(255,255,255,.08)}.site-footer a{color:rgba(255,255,255,.75);text-decoration:underline}.site-footer .footer-links{margin-bottom:.75rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}@media(max-width:640px){.nav-links{display:none}.page-header{padding:2.5rem 1rem 2rem}.insights-section{padding:2rem 1rem 3rem}.insights-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a class="nav-logo" href="https://hub.propertykickstart.co.uk">
-        <strong style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--pk-dark);">Property Kickstart</strong>
-      </a>
-      <ul class="nav-links">
-        <li><a href="https://hub.propertykickstart.co.uk">Home</a></li>
-        <li><a href="https://hub.propertykickstart.co.uk/insights/" class="active">Investor Insights</a></li>
-        <li><a href="https://propertykickstart-quiz.netlify.app" class="nav-cta">Find Your Strategy</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <header class="page-header">
-    <div class="page-header-inner">
-      <span class="section-label">Investor Insights</span>
-      <h1>Clear thinking on UK property investment</h1>
-      <p>Strategy breakdowns, deal mechanics, and honest analysis — written for investors who want to understand what they're getting into before they commit.</p>
-    </div>
-  </header>
-
-  <main class="insights-section">
-    <div class="insights-grid">
-
-      <!-- PKC-209 | 14 July 2026 | Development Opportunity -->
-      <article class="insight-card">
-        <a class="card-link" href="https://hub.propertykickstart.co.uk/insights/development-opportunity-ready-to-finish">
-          <div class="card-image">
-            <img src="/insights/images/PKC-207_Hub_1200x630.png" alt="Development Opportunity: Are You Ready to Finish?" loading="lazy">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">Development Opportunity</span>
-            <h2 class="card-title">Development Opportunity: Are You Ready to Finish?</h2>
-            <p class="card-desc">The question isn't whether you can buy the project. It's whether you can finish it — with the capital, time, team, and exit clarity that requires.</p>
-            <div class="card-meta">
-              <span>14 July 2026</span>
-              <span class="dot">·</span>
-              <span>5 min read</span>
-            </div>
-            <span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </a>
-      </article>
-
-      <!-- PKC-207 | 11 July 2026 | Serviced Accommodation -->
-      <article class="insight-card">
-        <a class="card-link" href="https://hub.propertykickstart.co.uk/insights/serviced-accommodation-occupancy-reality">
-          <div class="card-image">
-            <img src="/insights/images/PKC-206_Hub_1200x630.png" alt="Serviced Accommodation: The Occupancy Reality" loading="lazy">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">Serviced Accommodation</span>
-            <h2 class="card-title">Serviced Accommodation: The Occupancy Reality</h2>
-            <p class="card-desc">Most SA investors know their best week. The number that matters is the annual average — and the gap between them is where most misunderstanding about this strategy sits.</p>
-            <div class="card-meta">
-              <span>11 July 2026</span>
-              <span class="dot">·</span>
-              <span>5 min read</span>
-            </div>
-            <span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </a>
-      </article>
-
-      <!-- PKC-205 | 9 July 2026 | HMO -->
-      <article class="insight-card">
-        <a class="card-link" href="https://hub.propertykickstart.co.uk/insights/hmo-what-makes-a-deal-strong">
-          <div class="card-image">
-            <img src="/insights/images/PKC-205_Hub_1200x630.png" alt="What makes an HMO deal strong" loading="lazy">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">HMO</span>
-            <h2 class="card-title">The number most investors lead with when evaluating HMO deals is the least useful indicator of whether a deal will actually perform</h2>
-            <p class="card-desc">Bedroom count drives gross yield. But HMO deal performance is determined by location, cost structure, and management capacity — not the number of rooms.</p>
-            <div class="card-meta">
-              <span>9 July 2026</span>
-              <span class="dot">·</span>
-              <span>5 min read</span>
-            </div>
-            <span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </a>
-      </article>
-
-      <!-- PKC-204 | 7 July 2026 | Buy to Let -->
-      <article class="insight-card">
-        <a class="card-link" href="https://hub.propertykickstart.co.uk/insights/buy-to-let-net-yield-explained">
-          <div class="card-image">
-            <img src="/insights/images/PKC-204_Hub_1200x630.png" alt="The yield figure most Buy to Let investors quote is usually the least useful one" loading="lazy">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">Buy to Let</span>
-            <h2 class="card-title">The yield figure most Buy to Let investors quote is usually the least useful one</h2>
-            <p class="card-desc">Gross yield gets all the attention, but net yield tells you what a Buy to Let property actually puts in your pocket after running costs are factored in.</p>
-            <div class="card-meta">
-              <span>7 July 2026</span>
-              <span class="dot">·</span>
-              <span>5 min read</span>
-            </div>
-            <span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </a>
-      </article>
-
-      <!-- PKC-206 | 3 July 2026 | Housing Association -->
-      <article class="insight-card">
-        <a class="card-link" href="https://hub.propertykickstart.co.uk/insights/housing-association-hands-off-investors">
-          <div class="card-image">
-            <img src="/insights/images/PKC-203_Hub_1200x630.png" alt="Housing Association deals for hands-off investors" loading="lazy">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">Housing Association</span>
-            <h2 class="card-title">The first question most investors ask about Housing Association deals is the least important one</h2>
-            <p class="card-desc">Most investors ask the wrong first question about Housing Association deals. Here's what the strategy actually requires — and who it's genuinely suited to.</p>
-            <div class="card-meta">
-              <span>3 July 2026</span>
-              <span class="dot">·</span>
-              <span>6 min read</span>
-            </div>
-            <span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </a>
-      </article>
-
-      <!-- PKC-208 | 1 July 2026 | Investor Strategy -->
-      <article class="insight-card">
-        <a class="card-link" href="https://hub.propertykickstart.co.uk/insights/strategy-starts-with-the-investor">
-          <div class="card-image">
-            <img src="/insights/images/PKC-208_Hub_1200x630.png" alt="Why strategy starts with the investor" loading="lazy">
-          </div>
-          <div class="card-body">
-            <span class="card-tag">Investor Strategy</span>
-            <h2 class="card-title">The question most investors ask first — which strategy is best? — is usually the one they're least ready to answer</h2>
-            <p class="card-desc">Why strategy selection should come second. The four investor questions — capital, time horizon, involvement, and income vs growth — that determine which strategies are worth considering.</p>
-            <div class="card-meta">
-              <span>1 July 2026</span>
-              <span class="dot">·</span>
-              <span>7 min read</span>
-            </div>
-            <span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </a>
-      </article>
-
-    </div>
-  </main>
-
-  <section class="quiz-strip">
-    <div class="quiz-strip-inner">
-      <h2>Not sure which strategy fits you?</h2>
-      <p>Answer a few questions about your capital, goals, and availability — and get a clear recommendation tailored to where you actually are.</p>
-      <a class="cta-btn" href="https://propertykickstart-quiz.netlify.app" target="_blank" rel="noopener">Take the free strategy quiz</a>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-links">
-      <a href="https://hub.propertykickstart.co.uk">Hub Home</a>
-      <a href="https://propertykickstart.co.uk" target="_blank" rel="noopener">propertykickstart.co.uk</a>
-      <a href="https://propertykickstart-quiz.netlify.app" target="_blank" rel="noopener">Strategy Quiz</a>
-    </div>
-    <p>&copy; 2026 Property Kickstart. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+<nav class="site-nav"><div class="nav-inner"><a class="nav-logo" href="https://hub.propertykickstart.co.uk"><strong style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--pk-dark);">Property Kickstart</strong></a><ul class="nav-links"><li><a href="https://hub.propertykickstart.co.uk">Home</a></li><li><a href="https://hub.propertykickstart.co.uk/insights/" class="active">Investor Insights</a></li><li><a href="https://hub.propertykickstart.co.uk/#guides">Guides</a></li><li><a href="https://quiz.propertykickstart.co.uk" class="nav-cta">Find Your Strategy</a></li></ul></div></nav>
+<header class="page-header"><div class="page-header-inner"><span class="section-label">Investor Insights</span><h1>Clear thinking on UK property investment</h1><p>Strategy breakdowns, deal mechanics, and honest analysis — written for investors who want to understand what they're getting into before they commit.</p></div></header>
+<main class="insights-section"><div class="insights-grid">
+<article class="insight-card"><a class="card-link" href="https://hub.propertykickstart.co.uk/insights/development-opportunity-ready-to-finish"><div class="card-image"><img src="/insights/images/PKC-207_Hub_1200x630.png" alt="Development Opportunity: Are You Ready to Finish?" loading="lazy"></div><div class="card-body"><span class="card-tag">Development Opportunity</span><h2 class="card-title">Development Opportunity: Are You Ready to Finish?</h2><p class="card-desc">The question isn't whether you can buy the project. It's whether you can finish it — with the capital, time, team, and exit clarity that requires.</p><div class="card-meta"><span>14 July 2026</span><span class="dot">·</span><span>5 min read</span></div><span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a></article>
+<article class="insight-card"><a class="card-link" href="https://hub.propertykickstart.co.uk/insights/serviced-accommodation-occupancy-reality"><div class="card-image"><img src="/insights/images/PKC-206_Hub_1200x630.png" alt="Serviced Accommodation: The Occupancy Reality" loading="lazy"></div><div class="card-body"><span class="card-tag">Serviced Accommodation</span><h2 class="card-title">Serviced Accommodation: The Occupancy Reality</h2><p class="card-desc">Most SA investors know their best week. The number that matters is the annual average — and the gap between them is where most misunderstanding about this strategy sits.</p><div class="card-meta"><span>11 July 2026</span><span class="dot">·</span><span>5 min read</span></div><span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a></article>
+<article class="insight-card"><a class="card-link" href="https://hub.propertykickstart.co.uk/insights/hmo-what-makes-a-deal-strong"><div class="card-image"><img src="/insights/images/PKC-205_Hub_1200x630.png" alt="What makes an HMO deal strong" loading="lazy"></div><div class="card-body"><span class="card-tag">HMO</span><h2 class="card-title">The number most investors lead with when evaluating HMO deals is the least useful indicator of whether a deal will actually perform</h2><p class="card-desc">Bedroom count drives gross yield. But HMO deal performance is determined by location, cost structure, and management capacity — not the number of rooms.</p><div class="card-meta"><span>9 July 2026</span><span class="dot">·</span><span>5 min read</span></div><span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a></article>
+<article class="insight-card"><a class="card-link" href="https://hub.propertykickstart.co.uk/insights/buy-to-let-net-yield-explained"><div class="card-image"><img src="/insights/images/PKC-204_Hub_1200x630.png" alt="The yield figure most Buy to Let investors quote is usually the least useful one" loading="lazy"></div><div class="card-body"><span class="card-tag">Buy to Let</span><h2 class="card-title">The yield figure most Buy to Let investors quote is usually the least useful one</h2><p class="card-desc">Gross yield gets all the attention, but net yield tells you what a Buy to Let property actually puts in your pocket after running costs are factored in.</p><div class="card-meta"><span>7 July 2026</span><span class="dot">·</span><span>5 min read</span></div><span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a></article>
+<article class="insight-card"><a class="card-link" href="https://hub.propertykickstart.co.uk/insights/housing-association-hands-off-investors"><div class="card-image"><img src="/insights/images/PKC-203_Hub_1200x630.png" alt="Housing Association deals for hands-off investors" loading="lazy"></div><div class="card-body"><span class="card-tag">Housing Association</span><h2 class="card-title">The first question most investors ask about Housing Association deals is the least important one</h2><p class="card-desc">Most investors ask the wrong first question about Housing Association deals. Here's what the strategy actually requires — and who it's genuinely suited to.</p><div class="card-meta"><span>3 July 2026</span><span class="dot">·</span><span>6 min read</span></div><span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a></article>
+<article class="insight-card"><a class="card-link" href="https://hub.propertykickstart.co.uk/insights/strategy-starts-with-the-investor"><div class="card-image"><img src="/insights/images/PKC-208_Hub_1200x630.png" alt="Why strategy starts with the investor" loading="lazy"></div><div class="card-body"><span class="card-tag">Investor Strategy</span><h2 class="card-title">The question most investors ask first — which strategy is best? — is usually the one they're least ready to answer</h2><p class="card-desc">Why strategy selection should come second. The four investor questions — capital, time horizon, involvement, and income vs growth — that determine which strategies are worth considering.</p><div class="card-meta"><span>1 July 2026</span><span class="dot">·</span><span>7 min read</span></div><span class="card-read-more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div></a></article>
+</div></main>
+<section class="quiz-strip"><div class="quiz-strip-inner"><h2>Not sure which strategy fits you?</h2><p>Answer a few questions about your capital, goals, and availability — and get a clear recommendation tailored to where you actually are.</p><a class="cta-btn" href="https://quiz.propertykickstart.co.uk" target="_blank" rel="noopener">Take the free strategy quiz</a></div></section>
+<footer class="site-footer"><div class="footer-links"><a href="https://hub.propertykickstart.co.uk">Hub Home</a><a href="https://propertykickstart.co.uk" target="_blank" rel="noopener">propertykickstart.co.uk</a><a href="https://quiz.propertykickstart.co.uk" target="_blank" rel="noopener">Strategy Quiz</a></div><p>&copy; 2026 Property Kickstart. All rights reserved.</p></footer>
+</body></html>
