@@ -25,7 +25,7 @@ status = 200
 
 [[redirects]]
 from = "/quiz"
-to = "https://propertykickstart-quiz.netlify.app/"
+to = "https://quiz.propertykickstart.co.uk/"
 status = 302
 
 [[redirects]]
