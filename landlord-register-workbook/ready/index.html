@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your workbook is ready | Property Kickstart</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0b1a2e;--orange:#e05c12;--orange-dark:#b84a0c;--orange-darker:#9c3f0a;--ink:#2d3748;--muted:#4a5568;--line:#e6e1d8;--paper:#f6f4f0;--tint:#fdf3ec;--white:#fff}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+    a{color:var(--navy)}
+    :focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+    .nav{background:var(--white);border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1120px;margin:0 auto;padding:16px 20px}
+    .wordmark{text-decoration:none;color:var(--navy);font-weight:800;font-size:19px}
+    .wordmark span{color:var(--orange-dark)}
+    main{flex:1;padding:48px 20px 56px}
+    .card{max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(11,26,46,.10);padding:36px 32px}
+    .rule{width:56px;height:4px;background:var(--orange);border-radius:2px;margin-bottom:18px}
+    h1{font-size:clamp(28px,4vw,38px);line-height:1.12;letter-spacing:-.6px;color:var(--navy);margin:0 0 14px;font-weight:800}
+    p{margin:0 0 16px}
+    .btn{display:inline-block;background:var(--orange-dark);color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 28px;border-radius:10px;min-height:54px;margin:6px 0 18px;transition:background .15s}
+    .btn:hover{background:var(--orange-darker)}
+    .note{background:var(--tint);border-left:4px solid var(--orange);border-radius:8px;padding:14px 16px;font-size:15px;margin:8px 0 18px}
+    .note strong{color:var(--navy)}
+    .email{font-size:15px;color:var(--muted)}
+    .tips{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:8px}
+    .tips ul{margin:6px 0 0;padding-left:20px}
+    [hidden]{display:none!important}
+    h1[tabindex="-1"]:focus{outline:none}
+    footer{border-top:1px solid var(--line);background:var(--white)}
+    .foot{max-width:1120px;margin:0 auto;padding:20px;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+    @media (max-width:560px){main{padding:24px 16px 40px}.card{padding:26px 20px}.btn{display:block;text-align:center}}
+  </style>
+</head>
+<body>
+<header class="nav"><div class="nav-inner"><a class="wordmark" href="https://hub.propertykickstart.co.uk/">Property <span>Kickstart</span></a></div></header>
+
+<main>
+  <!-- Shown after a successful submission in this browser session -->
+  <section class="card" id="ready" hidden aria-labelledby="ready-title">
+    <div class="rule" aria-hidden="true"></div>
+    <h1 id="ready-title" tabindex="-1">Your Landlord Register Readiness Workbook is ready</h1>
+    <p>Click below to create your own working copy. Your copy will be saved to your Google Drive so you can update it as you prepare.</p>
+    <a class="btn" id="copy-btn" href="#" target="_blank" rel="noopener">Make my workbook copy</a>
+    <p class="email" id="email-sent" hidden>We&rsquo;ve also emailed you the link, so you can come back to it later.</p>
+    <p class="email" id="email-recent" hidden>We sent you the link a few minutes ago, so check your inbox for that email.</p>
+    <p class="email" id="email-failed" hidden>We couldn&rsquo;t send the email just now, so please make your copy using the button above.</p>
+    <p class="note"><strong>Preparation only.</strong> The regulations are still subject to finalisation. Use this workbook to prepare early and re-check the final rules before submitting any registration.</p>
+    <div class="tips">
+      <strong>Tips</strong>
+      <ul>
+        <li>You&rsquo;ll need to be signed in to a Google account to make a copy.</li>
+        <li>The email comes from hanna@propertykickstart.co.uk. If you can&rsquo;t see it, check your spam or promotions folder.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Shown when JavaScript is off (the email is the delivery route) -->
+  <section class="card" id="nojs" hidden aria-labelledby="nojs-title">
+    <div class="rule" aria-hidden="true"></div>
+    <h1 id="nojs-title">Thanks, check your inbox</h1>
+    <p>We&rsquo;ve emailed you a link to create your own copy of the Landlord Register Readiness Workbook. It comes from hanna@propertykickstart.co.uk.</p>
+    <p class="note"><strong>Preparation only.</strong> The regulations are still subject to finalisation. Use this workbook to prepare early and re-check the final rules before submitting any registration.</p>
+  </section>
+
+  <!-- Shown when someone lands here without requesting the workbook -->
+  <section class="card" id="missing" hidden aria-labelledby="missing-title">
+    <div class="rule" aria-hidden="true"></div>
+    <h1 id="missing-title">Get your free workbook</h1>
+    <p>Request the Landlord Register Readiness Workbook and we&rsquo;ll show you the copy link straight away. If you&rsquo;ve already requested it, the link is in your email.</p>
+    <a class="btn" id="back-btn" href="/landlord-register-workbook/">Get the free workbook</a>
+  </section>
+
+  <noscript>
+    <section class="card">
+      <h1>Thanks, check your inbox</h1>
+      <p>We&rsquo;ve emailed you a link to create your own copy of the Landlord Register Readiness Workbook. It comes from hanna@propertykickstart.co.uk.</p>
+    </section>
+  </noscript>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>&copy; 2026 Property Kickstart. For preparation and information purposes only. Not legal advice.</span>
+    <a href="https://privacy.propertykickstart.co.uk/" target="_blank" rel="noopener">Privacy Notice</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function read(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  var params = new URLSearchParams(location.search);
+  var attr = {};
+  try { attr = JSON.parse(read("lrr_attr") || "{}"); } catch (e) { attr = {}; }
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach(function (k) { if (params.get(k)) attr[k] = params.get(k); });
+
+  function sendEvent(type) {
+    var body = JSON.stringify({ type: type, utm_source: attr.utm_source || "", utm_medium: attr.utm_medium || "", utm_campaign: attr.utm_campaign || "", utm_content: attr.utm_content || "" });
+    try { fetch("/api/lrr/event", { method: "POST", headers: { "Content-Type": "application/json" }, body: body, keepalive: true }); } catch (e) {}
+  }
+
+  var delivery = null;
+  try { delivery = JSON.parse(read("lrr_delivery") || "null"); } catch (e) { delivery = null; }
+  var valid = delivery && typeof delivery.copyUrl === "string" && /^https:\/\/docs\.google\.com\/spreadsheets\/d\/[A-Za-z0-9_-]+\/copy$/.test(delivery.copyUrl);
+
+  if (valid) {
+    var section = document.getElementById("ready");
+    section.hidden = false;
+    var btn = document.getElementById("copy-btn");
+    btn.href = delivery.copyUrl;
+    btn.addEventListener("click", function () { sendEvent("copy_click"); });
+    var status = delivery.emailStatus === "recently_sent" ? "email-recent" : delivery.emailStatus === "failed" ? "email-failed" : "email-sent";
+    document.getElementById(status).hidden = false;
+    document.getElementById("ready-title").focus();
+    if (!read("lrr_ready_sent")) { try { sessionStorage.setItem("lrr_ready_sent", "1"); } catch (e) {} sendEvent("ready_view"); }
+  } else if (params.get("nojs") === "1") {
+    document.getElementById("nojs").hidden = false;
+  } else {
+    document.getElementById("missing").hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
