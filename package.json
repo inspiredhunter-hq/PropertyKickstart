@@ -1,0 +1,9 @@
+{
+  "name": "propertykickstart-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "hub.propertykickstart.co.uk static site. Dependencies are used only by Netlify Functions (ACT-800 Landlord Register Readiness Workbook funnel).",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

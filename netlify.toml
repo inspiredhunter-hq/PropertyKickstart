@@ -72,3 +72,9 @@ status = 302
 from = "/investor"
 to = "/start"
 status = 302
+
+# ACT-800 — short link for print/PDF use of the Landlord Register Readiness Workbook funnel
+[[redirects]]
+from = "/landlord-register"
+to = "/landlord-register-workbook/?utm_source=pk_short_link&utm_medium=pdf&utm_campaign=landlord_register_readiness&utm_content=short_link"
+status = 302
