@@ -38,3 +38,22 @@ For each future change, record its date, linked ACT, reason, migration or commit
 **Verification boundary:** SQL metadata checks and application source inspection are complete. No live signup was created and no deployment or end-to-end role-authenticated API test was executed; do not describe those as passed.
 
 **Disposition:** The 30 October Supabase notification has been addressed for migrations run as postgres. Independent application integration tests and broader security-lint remediation should be tracked as separate engineering work, not silently marked complete.
+
+
+## 21 October 2026: Final change-notification closure review
+
+**Status: CLOSED for the 30 October 2026 Data API default-grants notice.**
+
+Evidence:
+- Confirmed the two change migrations in `supabase_migrations.schema_migrations`.
+- Rechecked future public object defaults for the `postgres` role: no automatic API-role privileges on tables, sequences, or functions.
+- Confirmed that all 17 current public tables belong to `postgres`, have RLS enabled, deny client-role grants and retain service-role access.
+- Reviewed RLS policy metadata: ten tables have explicit client-deny policies; the remaining seven have no client grants and therefore do not require a new client-access policy for this change.
+- Reviewed source for the connected site, register and EPC functions. The registration backend uses Notion, not Supabase. The HMLR repository describes Supabase integration but does not contain a visible migration directory. New future integrations must follow the explicit-grants development standard.
+- The `supabase_admin` role retains platform-defined defaults. All existing public tables are owned by `postgres`; no change to this Supabase-managed role was made.
+
+**Validation:** Role privilege and schema checks passed. No end-to-end HTTP API test with real user credentials or new sign-up was performed. That limitation does not invalidate the narrow database-defaults remediation but must not be represented as application-wide acceptance testing.
+
+**Out of scope, separately tracked by Supabase Security Advisor:** One mutable-function-search-path warning and informational RLS-without-policy entries. These are not evidence of failure of the 30 October change; review them in the normal security hardening workstream.
+
+**Closure criterion:** Future public tables created by the application database owner no longer receive implicit API-role access, existing objects were unaffected, and guidance for explicit grants has been committed. Met.
