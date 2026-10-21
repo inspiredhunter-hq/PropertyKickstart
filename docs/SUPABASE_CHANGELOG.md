@@ -23,3 +23,18 @@ Project: property-kickstart-data (`qhebnkhbbnzfxbzjbxfa`).
 ## Change control
 
 For each future change, record its date, linked ACT, reason, migration or commit, affected objects, verification evidence, outcome and rollback approach. Do not mark unverified work complete.
+
+
+## 21 October 2026: Follow-up verification
+
+**Repository inspection:** Inspected default-branch file trees for PropertyKickstart, PropertyKickstart-Register, PropertyKickstart-EPC and PropertyKickstart-HMLR. The registration function uses Notion rather than Supabase; the EPC and workbook functions did not show Supabase table-creation paths. HMLR contains Supabase architecture descriptions, but its repository does not contain a visible SQL migration directory. This is not a certification of every external automation or deployment.
+
+**Repeated database verification:** 17 public tables, all 17 with RLS enabled. No public tables are SELECT-readable by either anon or authenticated roles. The postgres role's future public table, function and sequence defaults remain restricted.
+
+**Additional finding:** The supabase_admin role retains broad automatic defaults in the public schema. Do not change Supabase's platform administration role blindly; first confirm whether it actually creates application tables and whether a change would affect Supabase-managed operations.
+
+**Security adviser review:** 64 informational RLS-without-policy findings (seven in public) and one public function search-path warning. Seven public tables without policies also have no anon/authenticated SELECT grants, so no policies were added without an access requirement. The function warning is a separate hardening item and not caused by the 30 October grant change.
+
+**Verification boundary:** SQL metadata checks and application source inspection are complete. No live signup was created and no deployment or end-to-end role-authenticated API test was executed; do not describe those as passed.
+
+**Disposition:** The 30 October Supabase notification has been addressed for migrations run as postgres. Independent application integration tests and broader security-lint remediation should be tracked as separate engineering work, not silently marked complete.
