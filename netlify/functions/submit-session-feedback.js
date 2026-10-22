@@ -19,7 +19,7 @@ exports.handler = async event => {
     "Session Date":{date:{start:d.session_date}},
     "Property Reference":rich(d.property_reference),"Helpful Part":rich(d.helpful_part),"Helpful Other":rich(d.helpful_other),
     "Most Useful":rich(d.most_valuable),"Explain Better":rich(d.improvements),"Next Step":rich(d.next_step),
-    "Future Topic":rich(d.future_topic),"Name":rich(d.name),"Contact Consent":checkbox(d.contact_permission),
+    "Future Topic":rich(d.future_topic),"Future Session Question":rich(d.future_session_question),"Name":rich(d.name),"Contact Consent":checkbox(d.contact_permission),
     "Marketing Consent":checkbox(d.marketing_consent),"Event Name":rich(d.event),
     "Submitted At":{date:{start:new Date().toISOString()}}};
   if(d.email)fields.Email={email:String(d.email).slice(0,250)};
