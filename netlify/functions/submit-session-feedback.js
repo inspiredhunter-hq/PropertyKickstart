@@ -3,7 +3,7 @@
 // Never put this token in browser-side HTML or GitHub.
 const DATABASE_ID = "51ace8ab7d9446ea8be23c6511831233";
 const rich = value => ({rich_text:[{text:{content:String(value||"").slice(0,1800)}}]});
-const checkbox = value => ({checkbox:value===true||value==="on"||value==="true"});
+const checkbox = value => ({checkbox:value===true||value==="on"||value==="true"||value==="Yes"});
 exports.handler = async event => {
   if(event.httpMethod!=="POST") return {statusCode:405,body:JSON.stringify({error:"Method not allowed"})};
   const token=process.env.NOTION_TOKEN || process.env.NOTION_API_KEY;
